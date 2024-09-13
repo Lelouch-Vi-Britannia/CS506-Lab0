@@ -15,17 +15,17 @@ def test_dot_product():
 def test_cosine_similarity():
     ### YOUR CODE HERE
     
-    result = ### YOUR CODE HERE
+    result = cosine_similarity(vector1, vector2)
     
-    expected_result = ### YOUR CODE HERE
+    expected_result = np.dot(vector1, vector2) / (np.linalg.norm(vector1) * np.linalg.norm(vector2))
     
     assert np.isclose(result, expected_result), f"Expected {expected_result}, but got {result}"
 
 def test_nearest_neighbor():
     ### YOUR CODE HERE
     
-    result = ### YOUR CODE HERE
+    result = nearest_neighbor(query_point, points)
     
-    expected_index = ### YOUR CODE HERE
+    expected_index = np.argmin(np.linalg.norm(points - query_point, axis=1))
     
     assert result == expected_index, f"Expected index {expected_index}, but got {result}"
